@@ -99,8 +99,8 @@ class ParallelProcessor:
     def process_parallel(
         self,
         func: Callable,
-        *args,
-        **kwargs
+        *args: Any,
+        **kwargs: Any
     ) -> Any:
         """
         Execute a single function in parallel (async).
