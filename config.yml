@@ -1,0 +1,56 @@
+# UHIP Configuration
+# Production deployment configuration
+
+production:
+  max_workers: 8
+  use_processes: true
+  auto_optimize: true
+  optimization_interval: 100
+  batch_size: 64
+  timeout: 600
+  log_level: "INFO"
+
+development:
+  max_workers: 2
+  use_processes: false
+  auto_optimize: true
+  optimization_interval: 50
+  batch_size: 16
+  timeout: 300
+  log_level: "DEBUG"
+
+testing:
+  max_workers: 2
+  use_processes: false
+  auto_optimize: false
+  optimization_interval: 10
+  batch_size: 8
+  timeout: 60
+  log_level: "WARNING"
+
+modules:
+  ai_ml:
+    enabled: true
+    config:
+      model: "hybrid-v1"
+  
+  quantum:
+    enabled: true
+    config:
+      qubits: 5
+  
+  blockchain:
+    enabled: true
+    config:
+      network: "testnet"
+  
+  edge:
+    enabled: true
+    config:
+      nodes: 3
+
+monitoring:
+  metrics_enabled: true
+  metrics_interval: 60
+  log_file: "logs/uhip.log"
+  performance_tracking: true
